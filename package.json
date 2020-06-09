@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
-    "heroku-postbuild": "cd ./client && npm run build",
-    "preinstall": "cd $(pwd)",
+    "postinstall": "cd ./client && yarn && yarn build",
     "dev": "nodemon server/index.js",
     "makeTable": "knex migrate:make newTable --knexfile server/knexfile.js",
     "makeSeed": "knex seed:make newSeed --knexfile server/knexfile.js",
@@ -20,10 +19,7 @@
     "graphql": "^15.0.0",
     "knex": "^0.21.1",
     "nodemon": "^2.0.4",
-    "pg": "^8.2.1",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-scripts": "^3.4.1"
+    "pg": "^8.2.1"
   },
   "eslintConfig": {
     "extends": "react-app"
