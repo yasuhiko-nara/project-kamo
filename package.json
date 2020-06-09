@@ -1,0 +1,40 @@
+{
+  "name": "mypjt1",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "preinstall": "cd $(pwd)",
+    "dev": "nodemon server/index.js",
+    "makeTable": "knex migrate:make newTable --knexfile server/knexfile.js",
+    "makeSeed": "knex seed:make newSeed --knexfile server/knexfile.js",
+    "migrate": "knex migrate:latest --knexfile server/knexfile.js",
+    "rollback": "knex migrate:rollback --knexfile server/knexfile.js ",
+    "seed": "knex seed:run --knexfile server/knexfile.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-graphql": "^0.9.0",
+    "firebase": "^7.15.0",
+    "graphql": "^15.0.0",
+    "knex": "^0.21.1",
+    "nodemon": "^2.0.4",
+    "pg": "^8.2.1"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "main": "index.js"
+}
