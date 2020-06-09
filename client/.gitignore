@@ -23,7 +23,7 @@ yarn-debug.log*
 yarn-error.log*
 
 # firebase
-fb_config.js
+# fb_config.js
 fb_credential.json
 
 # sample_img
