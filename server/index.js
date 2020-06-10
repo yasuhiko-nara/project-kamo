@@ -75,7 +75,8 @@ const app = express();
 // app.use(cors());
 
 // Serve static assets
-app.use("/client", express.static(__dirname + "/build"));
+// app.use("/client", express.static(__dirname + "/build"));
+app.use(express.static(__dirname + "/build"));
 
 app.use(
   "/graphql",
