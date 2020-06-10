@@ -1,4 +1,3 @@
-console.log("this is the knexfile!!!!!!!!");
 module.exports = {
   client: "pg",
   connection: process.env.DATABASE_URL || require("./config").connection,
