@@ -10,10 +10,7 @@
     "makeSeed": "knex seed:make newSeed --knexfile server/knexfile.js",
     "migrate": "knex migrate:latest --knexfile server/knexfile.js",
     "rollback": "knex migrate:rollback --knexfile server/knexfile.js ",
-    "seed": "knex seed:run --knexfile server/knexfile.js",
-    "migrate_production": "knex migrate:latest --knexfile knexfile.js",
-    "rollback_production": "knex migrate:rollback --knexfile knexfile.js ",
-    "seed_production": "knex seed:run --knexfile knexfile.js"
+    "seed": "knex seed:run --knexfile server/knexfile.js"
   },
   "dependencies": {
     "cors": "^2.8.5",
