@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
-    "postinstall": "cd ./client && yarn && yarn build",
+    "heroku-postbuild": "cd ./client && yarn && yarn build",
     "dev": "nodemon server/index.js",
     "makeTable": "knex migrate:make newTable --knexfile server/knexfile.js",
     "makeSeed": "knex seed:make newSeed --knexfile server/knexfile.js",
