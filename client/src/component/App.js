@@ -26,11 +26,7 @@ const App = () => {
       .child(name)
       .getDownloadURL()
       .then((url) => {
-        console.log("ダウンロード完了。urlはこれ。", url);
-        console.log("いまからsetStateします。");
         setState({ ...state, url });
-        console.log("setState終わりました。");
-        console.log("でもstateは変わっていません。なぜ？？", state);
         return { ...state, url };
       });
   };
@@ -118,19 +114,8 @@ const App = () => {
   return (
     <>
       <input className="hide" onChange={ulPhoto} ref={inputEL} type="file" />
-      <h2>1. DBにカモの写真をuploadする</h2>
-      <button onClick={() => inputEL.current.click()}>アップロード</button>
-      <p>写真を保存したらここにメッセージが出ます。 => {message}</p>
-
-      <h2>2. DBのカモの写真を探す</h2>
-      {/* <p>
-        {place}で、{description}なカモを見つけました。
-      </p>
-      <p>
-        種類は{species}で、性別は{gender}でした。
-      </p>
-      <p>下記urlの写真をデータべースに保存できます。</p>
-      <p>URL => {url}</p> */}
+      <h2>1. データベースにカモの写真をuploadする</h2>
+      <h2>2. データベースのカモの写真を探す</h2>
 
       <div>
         場所
@@ -160,19 +145,12 @@ const App = () => {
           onChange={(e) => setState({ ...state, gender: e.target.value })}
         />
       </div>
-      {/* <div>
-        URL
-        <input
-          value={url}
-          onChange={(e) => setState({ ...state, url: e.target.value })}
-        />
-      </div> */}
 
       <button onClick={selectPhotos}>探す</button>
       <button onClick={() => setState(initialState)}>条件クリア</button>
-      {/* <button onClick={upload}>Upload</button> */}
-      {/* <button onClick={dlPhoto}>DL</button> */}
 
+      <button onClick={() => inputEL.current.click()}>アップロード</button>
+      <p>写真を保存したらここにメッセージが出ます。 => {message}</p>
       <Photo photos={state.photos} />
     </>
   );
