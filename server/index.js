@@ -76,7 +76,8 @@ const app = express();
 
 // Serve static assets
 // app.use("/client", express.static(__dirname + "/build"));
-app.use(express.static(__dirname + "/build"));
+// app.use("/client", express.static(__dirname + "/build"));
+app.use("/client", express.static(path.resolve(__dirname, "..", "build")));
 
 app.use(
   "/graphql",
